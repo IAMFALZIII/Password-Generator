@@ -17,24 +17,40 @@ function generatePassword() {
   var lowercaseletters = "qwertyuiopasdfghjklzxcvbnm";
   var uppercaseletters = "QWERTYUIOPASDFGHJKLZXCVBNM";
   var numbers = "1234567890";
-  var specialchar = "~!@#$%^&*()-=+";
+  var specialchar = "~!@#$%^&*()-=+<>/?";
 //* Ask for password info
   var Length = prompt("Amount of characters between 8 to 128");
-  var Lowercase = prompt("Would you like lowercase characters?");
-  var Uppercase = prompt("Would you like uppercase characters?");
-  var Numbers = prompt("Would you like numbers?");
-  var Special = prompt("Would you like special characters?");
+  var Lowercase = confirm("Would you like lowercase characters?");
+  var Uppercase = confirm("Would you like uppercase characters?");
+  var Numbers = confirm("Would you like numbers?");
+  var Special = confirm("Would you like special characters?");
 
   var password = "";
   var selection = "";
 
   userLength = parseInt(userLength);
 
-  if (userLowercase === true) {
+  if (Lowercase === true) {
     selection = selection + lowercaseletters;
-
-  
   }
+  if (Uppercase === true) {
+    selection = selection + uppercaseletters;
+  }
+  if (Numbers === true) {
+    selection = selection + numbers;
+  }
+  if (Special === true) {
+    selection = selection + specialchar;
+  }
+  if (Length >= 8 && Length <= 128) {
+
+    for (var index = 0; index < Length; index++) {
+      var randomChar = selection[Math.floor(Math.random() * selection.length)];
+      password = password + randomChar;
+    }
+  }
+
+  return password;
 }
 
 
