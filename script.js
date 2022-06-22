@@ -28,7 +28,7 @@ function generatePassword() {
   var password = "";
   var selection = "";
 
-  userLength = parseInt(userLength);
+  Length = parseInt(Length);
 
   if (Lowercase === true) {
     selection = selection + lowercaseletters;
@@ -52,7 +52,6 @@ function generatePassword() {
 
   return password;
 }
-
 
 
 // Add event listener to generate button
