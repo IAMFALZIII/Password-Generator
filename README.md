@@ -10,4 +10,4 @@ Module 3 Password Generator
 
 ![PasswordGenerator](./image/PasswordGenerator_Screenshot.png)
 
-[PasswordGenerator]()
+[PasswordGenerator](https://iamfalziii.github.io/Password-Generator/)
